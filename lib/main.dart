@@ -30,7 +30,10 @@ final goRouter = GoRouter(
     ),
     GoRoute(
       path: '/details',
-      builder: (context, state) => const DeepLinkScreen(),
+      builder: (context, state) =>  DeepLinkScreen( state.pathParameters['']!),
+    ),GoRoute(
+      path: '/details/:detailId',
+      builder: (context, state) =>  DeepLinkScreen( state.pathParameters['detailId']!),
     )
   ],
 );
